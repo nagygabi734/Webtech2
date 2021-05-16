@@ -10,7 +10,7 @@ Usage: 2 command lines (or terminal) required.
 
 – npm install
 
-– ng serve -o
+– ng serve
 
 2nd cmd: – cd assignment
 
