@@ -38,16 +38,16 @@ export class AppService {
     );
   }
 
-  createLakee(data): Observable<any> {
-    const url = `${this.serviceURL}/addLakee`;
+  createTractor(data): Observable<any> {
+    const url = `${this.serviceURL}/addTractor`;
     return this.http.post(url, data)
       .pipe(
         catchError(this.errorMgmt)
       );
   }
 
-  getLakee() {
-    return this.http.get(`${this.serviceURL}/getLakee`);
+  getTractor() {
+    return this.http.get(`${this.serviceURL}/getTractor`);
   }
 
   setLoggedInUser(user){

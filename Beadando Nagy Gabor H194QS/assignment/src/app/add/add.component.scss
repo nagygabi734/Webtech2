@@ -8,17 +8,15 @@
   position: absolute;
   z-index: 100;
   width: 99%;
-  background-color: seagreen;
+  background-color:darkslategrey;
   margin: auto;
 }
 body {
-  background-image: url(kep.jpg) ;
+  background-image: url('https://cdn.agriland.ie/uploads/2019/06/5112018-7804.jpg') ;
   background-size: cover;
   background-position:center;
-  height:720px;
+  height:750px;
   margin: auto;
-
-
 
   padding: 100px ;
 }
@@ -65,7 +63,7 @@ input {
 
   //  padding: 5px;
   color: white;
-  background-color: green;
+  background-color: red;
 }
 
 
@@ -80,7 +78,7 @@ input {
   margin: 5px;
   padding: 10px 40px 10px 40px;
   color: white;
-  background-color: green;
+  background-color:blue;
 }
 
 mat-card{

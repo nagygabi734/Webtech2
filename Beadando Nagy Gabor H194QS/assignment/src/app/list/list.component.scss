@@ -1,8 +1,8 @@
 body {
-  background-image: url(kep.jpg) ;
+  background-image: url('https://cdn.agriland.ie/uploads/2019/06/5112018-7804.jpg') ;
   background-size: cover;
   background-position:center;
-  height:720px;
+  height:750px;
   margin: auto;
 
 
@@ -30,7 +30,7 @@ th, td {
 }
 
 td {
-  background-color: seagreen;
+  background-color: chocolate;
 }
 
 
@@ -41,7 +41,7 @@ td {
   position: absolute;
   z-index: 100;
   width: 99%;
-  background-color: seagreen;
+  background-color: darkslategrey;
   margin: auto;
 }
 
@@ -62,7 +62,7 @@ td {
 
   //  padding: 5px;
   color: white;
-  background-color: green;
+  background-color: red;
 }
 .actbtn:hover {
   background-color: dodgerblue;
@@ -78,5 +78,5 @@ td {
 
   //  padding: 5px;
   color: white;
-  background-color: green;
+  background-color: red;
 }

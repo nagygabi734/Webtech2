@@ -20,21 +20,20 @@ mongo.connect('mongodb://localhost:27017/assignmentDB', {
 
 const Schema = mongo.Schema;
 
-const lakeeRoute = express.Router();
-let Lakee = new Schema(
+const tractorRoute = express.Router();
+let Tractor = new Schema(
   {
-    lakeName: { type: String},
-    lakeCode: { type: String},
-    fish: { type: String},
-    weight: { type: Number}
+    tractorName: { type: String},
+    tractorYear: { type: Number},
+    tractorWeight: { type: Number}
   },
-  { collection: 'lakee'}
+  { collection: 'tractor'}
 );
 
-var lakeeModel = mongo.model('lakees', Lakee, 'lakees');
+var tractorModel = mongo.model('tractors', Tractor, 'tractors');
 
-lakeeRoute.route('/addLakee').post((req, res, next) => {
-  lakeeModel.create(req.body, (error, data) => {
+tractorRoute.route('/addTractor').post((req, res, next) => {
+  tractorModel.create(req.body, (error, data) => {
     if (error) {
       console.log(error)
     } else {
@@ -43,8 +42,8 @@ lakeeRoute.route('/addLakee').post((req, res, next) => {
   })
 });
 
-lakeeRoute.route('/getLakee').get((req, res) => {
-  lakeeModel.find((error, data) => {
+tractorRoute.route('/getTractor').get((req, res) => {
+  tractorModel.find((error, data) => {
     if (error) {
       return next(error)
     } else {
@@ -108,7 +107,7 @@ app.use(express.static(path.join(__dirname, 'dist/assignment')));
 app.use('/', express.static(path.join(__dirname, 'dist/assignment')));
 
 app.use('', userRoute)
-app.use('', lakeeRoute)
+app.use('', tractorRoute)
 
 app.listen(8080);
 console.log('8080 porton elindult az adatbázisszerver.');

@@ -37,22 +37,21 @@ export class AddComponent implements OnInit {
 
   mainForm() {
     this.createForm = this.formBuilder.group({
-      lakeName: ['', [Validators.required]],
-      lakeCode: ['', [Validators.required, Validators.pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]*$')]],
-      fish: ['', [Validators.required]],
-      weight: ['', [Validators.required, Validators.pattern('^[-+]?[0-9]+(\\.[0-9]+)?$')]]
+      tractorName: ['', [Validators.required]],
+      tractorYear: ['', [Validators.required, Validators.pattern('^[-+]?[0-9]+(\\.[0-9]+)?$'), Validators.min(1)]],
+      tractorWeight: ['', [Validators.required, Validators.pattern('^[-+]?[0-9]+(\\.[0-9]+)?$'),Validators.min(1)]]
     });
   }
 
   onSubmit() {
     this.submitted = true;
     if (!this.createForm.valid) {
-      alert('Nem megfelelőek az adatok! Minden mezőt ki kell tölteni, a hal súlya pedig csak szám lehet.');
+      alert('Nem megfelelőek az adatok! Minden mezőt ki kell tölteni, a traktor évjárata és súlya szám lehet csak illetve 1-től nagyobb!!');
       return false;
     } else {
-      this.appService.createLakee(this.createForm.value).subscribe(
+      this.appService.createTractor(this.createForm.value).subscribe(
         (res) => {
-          alert('Hozzáadva.');
+          alert('Sikeres hozzáadás.');
           this.ngZone.run(() => this.router.navigateByUrl('/list'));
         }, (error) => {
           alert('Hiba' + error);
