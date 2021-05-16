@@ -1,6 +1,5 @@
 # Webtech2
 
-Web technologies 2 assignment
 
 Usage: 2 command lines (or terminal) required.
 
